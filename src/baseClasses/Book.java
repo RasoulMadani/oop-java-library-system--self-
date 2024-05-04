@@ -1,8 +1,24 @@
+package baseClasses;
+
+import baseClasses.Writer;
+
+import java.util.Arrays;
+
 public class Book {
     String name;
     int ID;
     Writer[] writers;
     int year;
+    boolean isBorrowed = false;
+
+    public boolean isBorrowed() {
+        return isBorrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        isBorrowed = borrowed;
+    }
+
     public Book(String name, int ID , Writer[]writers , int year){
         this.name= name;
         this.ID = ID;
@@ -41,5 +57,14 @@ public class Book {
         this.year = year;
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", ID=" + ID +
+                ", writers=" + Arrays.toString(writers) +
+                ", year=" + year +
+                ", isBorrowed=" + isBorrowed +
+                '}';
+    }
 }
